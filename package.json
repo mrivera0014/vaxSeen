@@ -1,23 +1,22 @@
 {
-  "name": "du-Devour-The-Burger",
+  "name": "vaxSeen",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mrivera0014/du-Devour-The-Burger.git"
+    "url": "git+https://github.com/mrivera0014/vaxSeen.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/mrivera0014/du-Devour-The-Burger/issues"
+    "url": "https://github.com/mrivera0014/vaxSeen/issues"
   },
-  "homepage": "https://github.com/mrivera0014/du-Devour-The-Burger#readme",
+  "homepage": "https://github.com/mrivera0014/vaxSeen#readme",
   "dependencies": {
     "express": "^4.17.1",
     "express-handlebars": "^5.2.1",
