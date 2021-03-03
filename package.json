@@ -1,23 +1,8 @@
 {
-  "name": "du-Devour-The-Burger",
+  "name": "vaxSeen",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/mrivera0014/du-Devour-The-Burger.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/mrivera0014/du-Devour-The-Burger/issues"
-  },
-  "homepage": "https://github.com/mrivera0014/du-Devour-The-Burger#readme",
   "dependencies": {
     "express": "^4.17.1",
     "express-handlebars": "^5.2.1",
@@ -25,5 +10,21 @@
     "mysql2": "^2.2.5",
     "passport": "^0.4.1",
     "sequelize": "^6.5.0"
-  }
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrivera0014/vaxSeen.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mrivera0014/vaxSeen/issues"
+  },
+  "homepage": "https://github.com/mrivera0014/vaxSeen#readme"
 }
