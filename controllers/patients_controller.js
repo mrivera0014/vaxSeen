@@ -10,15 +10,13 @@ router.get("/", function (req, res) {
 // get route, edited to match sequelize
 router.get("/patients", function (req, res) {
   // replace old function with sequelize function
-  db.patient
-    .findAll()
-
-    .then(function (dbPatients) {
-      console.log(dbPatients);
-      // into the main index, updating the page
-      var hbsObject = { patient: dbPatients };
-      return res.render("index", hbsObject);
-    });
+  db.Patients.findAll().then(function (dbPatient) {
+    console.log(dbPatient);
+    // into the main index, updating the page
+    var hbsObject = { patient: dbPatient };
+    return res.json(dbPatient);
+    // return res.render("index", hbsObject);
+  });
 });
 
 // post route to create burgers
