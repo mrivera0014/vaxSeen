@@ -7,6 +7,11 @@ router.get("/", function (req, res) {
   res.redirect("/patients");
 });
 
+router.get("/patients/create", function (req, res) {
+  // send us to the next get function instead.
+  res.render("logPatient");
+});
+
 // get route, edited to match sequelize
 router.get("/patients", function (req, res) {
   // replace old function with sequelize function
