@@ -1,0 +1,21 @@
+<h1>Patient List</h1>
+
+<h2>Not Vaccinated:</h2>
+
+<ul>
+    {{#each patient}}
+    {{#unless vaccinated}}
+    {{> patients/patient-block vaccinated=false}}
+    {{/unless}}
+    {{/each}}
+</ul>
+
+<h2>Vaccinated</h2>
+
+<ul>
+    {{#each patient}}
+    {{#if vaccinated}}
+    {{> patients/patient-block vaccinated=true}}
+    {{/if}}
+    {{/each}}
+</ul>
