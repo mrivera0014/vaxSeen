@@ -9,7 +9,7 @@ router.get("/", function (req, res) {
   res.redirect("/patients");
 });
 
-router.get("/", function (req, res) {
+router.get("/signup", function (req, res) {
   // If the user already has an account send them to the members page
   if (req.user) {
     res.redirect("/patients");
