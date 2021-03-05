@@ -1,0 +1,50 @@
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+        </div>
+    </div>
+</nav>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <h2>Add New Patient:</h2>
+            <form class="signup">
+                <div class="form-group">
+                    <label for="exampleInputFirst">First Name</label>
+                    <input type="first-name" class="form-control" id="first-name-input" placeholder="First Name">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputLast">Last Name</label>
+                    <input type="last-name" class="form-control" id="last-name-input" placeholder="Last Name">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputAge">Age</label>
+                    <input type="age" class="form-control" id="age-input" placeholder="Age">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputHeight">Height (optional)</label>
+                    <input type="height" class="form-control" id="height-input" placeholder="Height">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputWeight">Weight(optional)</label>
+                    <input type="weight" class="form-control" id="weight-input" placeholder="Weight">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail">Email</label>
+                    <input type="email" class="form-control" id="email-input" placeholder="Email">
+                </div>
+                <div style="display: none" id="alert" class="alert alert-danger" role="alert">
+                    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                    <span class="sr-only">Error:</span> <span class="msg"></span>
+                </div>
+                <button type="submit" class="btn btn-default">Sign Up</button>
+            </form>
+            <br />
+            <p>Or view current list of patients<a href="/patients">here.</a></p>
+
+        </div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="/public/js/logPatients.js"></script>
