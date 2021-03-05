@@ -19,7 +19,10 @@ router.get("/signup", function (req, res) {
 
 router.get("/patients/create", function (req, res) {
   // send us to the next get function instead.
+  if (req.user) {
   res.render("addPatients");
+  }
+  res.render("login");
 });
 
 // get route, edited to match sequelize
