@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/mrivera0014/vaxSeen#readme",
   "dependencies": {
+    "@handlebars/allow-prototype-access": "^1.0.3",
     "bcryptjs": "^2.4.3",
     "express": "^4.17.1",
     "express-handlebars": "^5.2.1",
