@@ -18,11 +18,13 @@ router.get("/signup", function (req, res) {
 });
 
 router.get("/patients/create", function (req, res) {
+  // res.setHeader("Access-Control-Allow-Origin", "*");
   // send us to the next get function instead.
   if (req.user) {
-  res.render("addPatients");
+    res.render("addPatients");
+  } else {
+    res.render("login");
   }
-  res.render("login");
 });
 
 // get route, edited to match sequelize
@@ -42,6 +44,7 @@ router.get("/patients", function (req, res) {
 
 // post route to create burgers
 router.post("/patients/create", function (req, res) {
+  console.log("are we hitting this route");
   // edited burger create to add in a burger_name
   db.Patient.create({
     firstName: req.body.firstName,
@@ -52,9 +55,9 @@ router.post("/patients/create", function (req, res) {
     email: req.body.email,
   })
     // pass the result of our call
-    .then(function (dbPatient) {
+    .then(function () {
       // log the result to our terminal/bash window
-      console.log(dbPatient);
+      // console.log(dbPatient);
       // redirect
       res.redirect("/patients");
     });

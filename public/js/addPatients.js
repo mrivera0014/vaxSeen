@@ -1,14 +1,15 @@
 $(document).ready(function () {
   // Getting references to our form and input
-  const addPatientForm = $("#form.signup");
+  const addPatientForm = $(".signup");
   const firstNameInput = $("#first-name-input");
+  const lastNameInput = $("#last-name-input");
   const ageInput = $("#age-input");
   const heightInput = $("#height-input");
   const weightInput = $("#weight-input");
   const emailInput = $("#email-input");
 
   // When the signup button is clicked, we validate the email and password are not blank
-  addPatientForm.on("submit", function (event) {
+  addPatientForm.on("submit", async function (event) {
     event.preventDefault();
     var patientData = {
       firstNameInput: firstNameInput.val().trim(),
@@ -16,8 +17,25 @@ $(document).ready(function () {
       ageInput: ageInput.val().trim(),
       heightInput: heightInput.val().trim(),
       weightInput: weightInput.val().trim(),
-      email: emailInput.val().trim(),
+      emailInput: emailInput.val().trim(),
     };
+
+    if (patientData.ageInput) {
+      parseInt(patientData.ageInput);
+    } else {
+      patientData.ageInput = 0;
+    }
+    if (patientData.heightInput) {
+      parseInt(patientData.heightInput);
+    } else {
+      patientData.heightInput = 0;
+    }
+
+    if (patientData.weightInput) {
+      parseInt(patientData.weightInput);
+    } else {
+      patientData.weightInput = 0;
+    }
 
     if (
       !patientData.firstNameInput ||
@@ -29,7 +47,7 @@ $(document).ready(function () {
     }
 
     // If we have an email and password, run the signUpPatient function
-    addPatient(
+    await addPatient(
       patientData.firstNameInput,
       patientData.lastNameInput,
       patientData.ageInput,
@@ -55,16 +73,6 @@ $(document).ready(function () {
       height: height,
       weight: weight,
       email: email,
-    })
-      .then(function (data) {
-        window.location.replace("/patients");
-        // If there's an error, handle it by throwing up a bootstrap alert
-      })
-      .catch(handleLoginErr);
-  }
-
-  function handleLoginErr(err) {
-    $("#alert .msg").text(err.responseJSON);
-    $("#alert").fadeIn(500);
+    });
   }
 });
