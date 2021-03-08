@@ -1,4 +1,4 @@
-input[type="text"],
+/* input[type="text"],
 select {
   width: 100%;
   padding: 12px 20px;
@@ -28,9 +28,9 @@ div {
   border-radius: 5px;
   background-color: #f2f2f2;
   padding: 20px;
-}
+} */
 
-.container {
+/* .container {
   background-color: blue;
   color: white;
   border: 2px solid black;
@@ -40,7 +40,7 @@ div {
 
 h2 {
   text-align: center;
-}
+} */
 
 #patientList {
   text-align: center;
@@ -60,9 +60,9 @@ h2 {
   left: 300px;
 }
 
-/* #patients {
-    border: 3px solid red;
-} */
+#patients {
+  border: 3px solid red;
+}
 
 #password-input {
   margin-bottom: 20px;
@@ -203,4 +203,8 @@ body {
 
 #signup {
   margin-bottom: 40px;
+}
+
+#view {
+  color: red;
 }
