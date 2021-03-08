@@ -23,13 +23,9 @@ module.exports = function (sequelize, DataTypes) {
     },
     height: {
       type: DataTypes.INTEGER,
-      isInt: true,
-      len: [1, 3],
     },
     weight: {
       type: DataTypes.INTEGER,
-      isInt: true,
-      len: [1, 3],
     },
     vaccinated: {
       type: DataTypes.BOOLEAN,
