@@ -3,6 +3,7 @@ var router = express.Router();
 var db = require("../models");
 const passport = require("../config/passport");
 const isAuthenticated = require("../config/middleware/isAuthenticated");
+const { sequelize } = require("../models/index");
 
 router.get("/", function (req, res) {
   // send us to the next get function instead.
