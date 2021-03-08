@@ -1,15 +1,21 @@
 // Requiring necessary npm packages
-var express = require("express");
-var session = require("express-session");
+const express = require("express");
+const session = require("express-session");
+const exphbs = require("express-handlebars");
+const Handlebars = require("handlebars");
+const {
+  allowInsecurePrototypeAccess,
+} = require("@handlebars/allow-prototype-access");
+
 // Requiring passport as we've configured it
-var passport = require("./config/passport");
+const passport = require("./config/passport");
 
 // Setting up port and requiring models for syncing
-var PORT = process.env.PORT || 8080;
-var db = require("./models");
+const PORT = process.env.PORT || 8080;
+const db = require("./models");
 
 // Creating express app and configuring middleware needed for authentication
-var app = express();
+const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
@@ -21,12 +27,16 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-const exphbs = require("express-handlebars");
-
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.engine(
+  "handlebars",
+  exphbs({
+    defaultLayout: "main",
+    handlebars: allowInsecurePrototypeAccess(Handlebars),
+  })
+);
 app.set("view engine", "handlebars");
 
-var routes = require("./controllers/patients_controller.js");
+const routes = require("./controllers/patients_controller.js");
 
 app.use(routes);
 

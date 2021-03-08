@@ -1,4 +1,5 @@
-input[type=text], select {
+input[type="text"],
+select {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -10,7 +11,7 @@ input[type=text], select {
 
 /* input[type=submit] {
   width: 100%;
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
@@ -19,7 +20,7 @@ input[type=text], select {
   cursor: pointer;
 }
 
-input[type=submit]:hover {
+input[type="submit"]:hover {
   background-color: #45a049;
 }
 
@@ -40,25 +41,22 @@ h2 {
   text-align: center;
 } */
 
-
-
 #patientList {
-    text-align: center;
+  text-align: center;
 }
 
 .vaccinated,
 .unvaccinated {
-        margin: 10px;
-    position: absolute;
+  margin: 10px;
+  position: absolute;
 }
 
-.vaccinated{
-    right: 300px;
+.vaccinated {
+  right: 300px;
 }
 
-
-.unvaccinated{
-    left: 300px;
+.unvaccinated {
+  left: 300px;
 }
 
 /* #patients {
@@ -184,7 +182,6 @@ body {
   background-color: #3b5998;
 }
 
-
 @supports (-ms-ime-align: auto) {
   .form-label-group > label {
     display: none;
@@ -193,8 +190,6 @@ body {
     color: #777;
   }
 }
-
-
 
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
   .form-label-group > label {
@@ -208,4 +203,3 @@ body {
 #signup {
   margin-bottom: 40px;
 }
-

@@ -45,7 +45,6 @@ router.get("/patients", function (req, res) {
 
 // post route to create burgers
 router.post("/patients/create", function (req, res) {
-  console.log("are we hitting this route");
   // edited burger create to add in a burger_name
   db.Patient.create({
     firstName: req.body.firstName,
@@ -64,24 +63,20 @@ router.post("/patients/create", function (req, res) {
     });
 });
 
-router.put("patients/:id", (req, res) => {
-  const condition = `id = ${req.params.id}`;
-
-  console.log("condition", condition);
-
-  patient.update(
+router.put("/patients/:id", function (req, res) {
+  // update one of the burgers
+  db.Patient.update(
     {
-      vaccinated: req.body.vaccinated,
+      vaccinated: true,
     },
-    condition,
-    (result) => {
-      if (result.changedRows === 0) {
-        // If no rows were changed, then the ID must not exist, so 404
-        return res.status(404).end();
-      }
-      res.status(200).end();
+    {
+      where: {
+        id: req.params.id,
+      },
     }
-  );
+  ).then(function (dbPatient) {
+    res.json("/patients");
+  });
 });
 
 router.post("/login", passport.authenticate("local"), function (req, res) {
