@@ -1,9 +1,9 @@
 <li>
-	<p>{{firstName}} {{lastName}}</p>
+	<p>Name: {{dataValues.firstName}} {{dataValues.lastName}}</p>
 
-    <p>{{age}}</p>
+    <p>Age: {{dataValues.age}}</p>
 
-	<button class="change-vaccinated" data-id="{{id}}" data-newvaccinated="{{vaccinated}}">
+	<button class="change-vaccinated" data-id="{{dataValues.id}}" data-newvaccinated="{{vaccinated}}">
 		{{#if vaccinated}}Vaccinated{{else}}Unvaccinated{{/if}}
 	</button>
 </li>
