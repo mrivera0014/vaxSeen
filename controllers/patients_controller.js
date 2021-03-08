@@ -59,7 +59,7 @@ router.post("/patients/create", function (req, res) {
       // log the result to our terminal/bash window
       // console.log(dbPatient);
       // redirect
-      res.redirect(307, "/patients");
+      res.redirect("/patients");
     });
 });
 
