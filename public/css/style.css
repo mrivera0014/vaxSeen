@@ -1,0 +1,71 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#patientList {
+    text-align: center;
+}
+
+.vaccinated,
+.unvaccinated {
+        margin: 10px;
+    position: absolute;
+}
+
+.vaccinated{
+    right: 300px;
+}
+
+
+.unvaccinated{
+    left: 300px;
+}
+
+/* #patients {
+    border: 3px solid red;
+} */
