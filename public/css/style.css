@@ -1,3 +1,76 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#patientList {
+    text-align: center;
+}
+
+.vaccinated,
+.unvaccinated {
+        margin: 10px;
+    position: absolute;
+}
+
+.vaccinated{
+    right: 300px;
+}
+
+
+.unvaccinated{
+    left: 300px;
+}
+
+/* #patients {
+    border: 3px solid red;
+} */
+
 #password-input {
   margin-bottom: 20px;
 }
@@ -117,8 +190,6 @@ body {
   background-color: #3b5998;
 }
 
-/* Fallback for Edge
--------------------------------------------------- */
 
 @supports (-ms-ime-align: auto) {
   .form-label-group > label {
@@ -129,8 +200,7 @@ body {
   }
 }
 
-/* Fallback for IE
--------------------------------------------------- */
+
 
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
   .form-label-group > label {
@@ -144,3 +214,4 @@ body {
 #signup {
   margin-bottom: 40px;
 }
+

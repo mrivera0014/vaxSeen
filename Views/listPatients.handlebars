@@ -1,23 +1,28 @@
+<link rel="stylesheet" href="/css/style.css">
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-<a href="/patients/create"><button type="submit" class="btn btn-default">Add Patient</button></a>
-<h1>Patient List</h1>
+<a id="btnPatient" href="/patients/create"><button type="submit" class="btn btn-default">Add Patient</button></a>
+<h1 id="patientList">Patient List</h1>
 
-<h2>Not Vaccinated:</h2>
+<section class="unvaccinated">
+    <h2>Not Vaccinated:</h2>
 
-<ul>
-    {{#each patient}}
-    {{#unless vaccinated}}
-    {{> patients/patient-block vaccinated=false}}
-    {{/unless}}
-    {{/each}}
-</ul>
+    <ul>
+        {{#each patient}}
+        {{#unless vaccinated}}
+        {{> patients/patient-block vaccinated=false}}
+        {{/unless}}
+        {{/each}}
+    </ul>
+</section>
 
-<h2>Vaccinated</h2>
+<section class="vaccinated">
+    <h2>Vaccinated</h2>
 
-<ul>
-    {{#each patient}}
-    {{#if vaccinated}}
-    {{> patients/patient-block vaccinated=true}}
-    {{/if}}
-    {{/each}}
-</ul>
+    <ul>
+        {{#each patient}}
+        {{#if vaccinated}}
+        {{> patients/patient-block vaccinated=true}}
+        {{/if}}
+        {{/each}}
+    </ul>
+</section>
