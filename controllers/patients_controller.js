@@ -35,7 +35,8 @@ router.get("/patients", function (req, res) {
       console.log(dbPatient);
       // into the main index, updating the page
       const hbsObject = { patient: dbPatient };
-      return res.render("listPatients", hbsObject);
+      console.log();
+      res.render("listPatients", hbsObject);
     });
   } else {
     res.redirect("/login");
@@ -63,21 +64,25 @@ router.post("/patients/create", function (req, res) {
     });
 });
 
-// put route to devour a burger
-// router.put("/burgers/update/:id", function (req, res) {
-//     // update one of the burgers
-//     db.Burger.update({
-//         devoured: true
-//     },
-//         {
-//             where: {
-//                 id: req.params.id
-//             }
-//         }
-//     ).then(function (dbBurger) {
-//         res.json("/");
-//     });
-// });
+router.put("patients/:id", (req, res) => {
+  const condition = `id = ${req.params.id}`;
+
+  console.log("condition", condition);
+
+  patient.update(
+    {
+      vaccinated: req.body.vaccinated,
+    },
+    condition,
+    (result) => {
+      if (result.changedRows === 0) {
+        // If no rows were changed, then the ID must not exist, so 404
+        return res.status(404).end();
+      }
+      res.status(200).end();
+    }
+  );
+});
 
 router.post("/login", passport.authenticate("local"), function (req, res) {
   res.json(req.user);
