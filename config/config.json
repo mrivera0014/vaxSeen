@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "Revolution94!",
+    "password": "Canelo!14",
     "database": "vaccine_db",
     "host": "127.0.0.1",
     "port": 3306,
@@ -9,7 +9,7 @@
   },
   "test": {
     "username": "root",
-    "password": "Revolution94!",
+    "password": "Canelo!14",
     "database": "database_test",
     "host": "127.0.0.1",
     "port": 3306,
@@ -19,5 +19,4 @@
     "use_env_variable": "JAWSDB_URL",
     "dialect": "mysql"
   }
-
 }
