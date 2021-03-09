@@ -1,0 +1,61 @@
+<link rel="stylesheet" href="/css/style.css">
+<div class="container">
+    <div class="row">
+        <div class="col-sm-2">
+            <div class="card">
+                <div class="card-body">
+                    <a href="/patients/create"><button type="submit" class="btn btn-default">Add Patient</button></a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 text-center" id="top-bar">
+                <h1>Patient List</h1>
+                <hr>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 text-center" class="task">
+                    <h2>Unvaccinated</h2>
+                    <hr>
+                    {{#each patient}}
+                    {{#unless dataValues.vaccinated}}
+                    <div class="col-sm-9 text-center">
+                        <div class="card">
+                            <div class="card-body">
+                                <p>Name: {{dataValues.firstName}} {{dataValues.lastName}} </p>
+                                <p>Age: {{dataValues.age}}</p>
+                                <p>Contact Info: {{dataValues.email}}</p>
+                                <form class="button-size vaccinate-form">
+                                    <input input type="hidden" class="patient_id" type="text"
+                                        value={{dataValues.id}}><br>
+                                    <button type="submit" class="btn btn-default">Vaccinate</button>
+                                </form>
+                            </div>
+                        </div>
+
+                    </div>
+                    {{/unless}}
+                    {{/each}}
+
+                </div>
+
+                <div class="col-sm-6 text-center" class="task">
+                    <h2>Vaccinated</h2>
+                    <hr>
+                    {{#each patient}}
+                    {{#if dataValues.vaccinated}}
+                    <div class="card">
+                        <div class="card-body">
+                            <p>Name: {{dataValues.firstName}} {{dataValues.lastName}} </p>
+                            <p>Age: {{dataValues.age}}</p>
+                            <p>Contact Info: {{dataValues.email}}</p>
+                        </div>
+                    </div>
+                    {{/if}}
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="/js/listPatients.js"></script>
